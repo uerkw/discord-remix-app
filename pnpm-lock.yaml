@@ -17,6 +17,9 @@ dependencies:
   '@conform-to/zod':
     specifier: 1.0.1
     version: 1.0.1(zod@3.22.4)
+  '@discordjs/rest':
+    specifier: ^2.2.0
+    version: 2.2.0
   '@radix-ui/react-dropdown-menu':
     specifier: 2.0.6
     version: 2.0.6(@types/react-dom@18.2.19)(@types/react@18.2.56)(react-dom@18.2.0)(react@18.2.0)
@@ -59,6 +62,9 @@ dependencies:
   cross-env:
     specifier: 7.0.3
     version: 7.0.3
+  discord-api-types:
+    specifier: ^0.37.76
+    version: 0.37.76
   drizzle-orm:
     specifier: 0.29.3
     version: 0.29.3(@types/better-sqlite3@7.6.9)(@types/react@18.2.56)(better-sqlite3@9.4.1)(react@18.2.0)
@@ -80,6 +86,9 @@ dependencies:
   remix-auth:
     specifier: 3.6.0
     version: 3.6.0(@remix-run/react@2.8.1)(@remix-run/server-runtime@2.8.1)
+  remix-auth-discord:
+    specifier: ^1.3.3
+    version: 1.3.3(@remix-run/react@2.8.1)(@remix-run/server-runtime@2.8.1)
   remix-auth-form:
     specifier: 1.4.0
     version: 1.4.0(@remix-run/server-runtime@2.8.1)(remix-auth@3.6.0)
@@ -614,6 +623,31 @@ packages:
     dependencies:
       '@conform-to/dom': 1.0.1
       zod: 3.22.4
+    dev: false
+
+  /@discordjs/collection@2.0.0:
+    resolution: {integrity: sha512-YTWIXLrf5FsrLMycpMM9Q6vnZoR/lN2AWX23/Cuo8uOOtS8eHB2dyQaaGnaF8aZPYnttf2bkLMcXn/j6JUOi3w==}
+    engines: {node: '>=18'}
+    dev: false
+
+  /@discordjs/rest@2.2.0:
+    resolution: {integrity: sha512-nXm9wT8oqrYFRMEqTXQx9DUTeEtXUDMmnUKIhZn6O2EeDY9VCdwj23XCPq7fkqMPKdF7ldAfeVKyxxFdbZl59A==}
+    engines: {node: '>=16.11.0'}
+    dependencies:
+      '@discordjs/collection': 2.0.0
+      '@discordjs/util': 1.0.2
+      '@sapphire/async-queue': 1.5.2
+      '@sapphire/snowflake': 3.5.3
+      '@vladfrangu/async_event_emitter': 2.2.4
+      discord-api-types: 0.37.61
+      magic-bytes.js: 1.10.0
+      tslib: 2.6.2
+      undici: 5.27.2
+    dev: false
+
+  /@discordjs/util@1.0.2:
+    resolution: {integrity: sha512-IRNbimrmfb75GMNEjyznqM1tkI7HrZOf14njX7tCAAUetyZM1Pr8hX/EK2lxBCOgWDRmigbp24fD1hdMfQK5lw==}
+    engines: {node: '>=16.11.0'}
     dev: false
 
   /@drizzle-team/studio@0.0.39:
@@ -1242,6 +1276,11 @@ packages:
     requiresBuild: true
     dev: true
     optional: true
+
+  /@fastify/busboy@2.1.1:
+    resolution: {integrity: sha512-vBZP4NlzfOlerQTnba4aqZoMhE/a9HY7HRqoOPaETQcSQuWEIyZMHGfVu6w9wGtGK5fED5qRs2DteVCjOH60sA==}
+    engines: {node: '>=14'}
+    dev: false
 
   /@floating-ui/core@1.6.0:
     resolution: {integrity: sha512-PcF++MykgmTj3CIyOQbKA/hDzOAiqI3mhuoN44WRCopIs1sgoDoU4oty4Jtqaj/y3oDU6fnVSm4QG0a3t5i0+g==}
@@ -2224,6 +2263,16 @@ packages:
     dev: true
     optional: true
 
+  /@sapphire/async-queue@1.5.2:
+    resolution: {integrity: sha512-7X7FFAA4DngXUl95+hYbUF19bp1LGiffjJtu7ygrZrbdCSsdDDBaSjB7Akw0ZbOu6k0xpXyljnJ6/RZUvLfRdg==}
+    engines: {node: '>=v14.0.0', npm: '>=7.0.0'}
+    dev: false
+
+  /@sapphire/snowflake@3.5.3:
+    resolution: {integrity: sha512-jjmJywLAFoWeBi1W7994zZyiNWPIiqRRNAmSERxyg93xRGzNYvGjlZ0gR6x0F4gPRi2+0O6S71kOZYyr3cxaIQ==}
+    engines: {node: '>=v14.0.0', npm: '>=7.0.0'}
+    dev: false
+
   /@tailwindcss/typography@0.5.10(tailwindcss@3.4.1):
     resolution: {integrity: sha512-Pe8BuPJQJd3FfRnm6H0ulKIGoMEQS+Vq01R6M5aCrFB/ccR/shT+0kXLjouGC1gFLm9hopTFN+DMP0pfwRWzPw==}
     peerDependencies:
@@ -2352,7 +2401,7 @@ packages:
       '@babel/plugin-syntax-typescript': 7.24.1(@babel/core@7.24.3)
       '@vanilla-extract/babel-plugin-debug-ids': 1.0.5
       '@vanilla-extract/css': 1.14.1
-      esbuild: 0.17.6
+      esbuild: 0.19.12
       eval: 0.1.8
       find-up: 5.0.0
       javascript-stringify: 2.1.0
@@ -2375,6 +2424,11 @@ packages:
   /@vanilla-extract/private@1.0.3:
     resolution: {integrity: sha512-17kVyLq3ePTKOkveHxXuIJZtGYs+cSoev7BlP+Lf4916qfDhk/HBjvlYDe8egrea7LNPHKwSZJK/bzZC+Q6AwQ==}
     dev: true
+
+  /@vladfrangu/async_event_emitter@2.2.4:
+    resolution: {integrity: sha512-ButUPz9E9cXMLgvAW8aLAKKJJsPu1dY1/l/E8xzLFuysowXygs6GBcyunK9rnGC4zTsnIc2mQo71rGw9U+Ykug==}
+    engines: {node: '>=v14.0.0', npm: '>=7.0.0'}
+    dev: false
 
   /@web3-storage/multipart-parser@1.0.0:
     resolution: {integrity: sha512-BEO6al7BYqcnfX15W2cnGR+Q566ACXAT9UQykORCWW80lmkpWsnEob6zJS1ZVBKsSJC8+7vJkHwlp+lXG1UCdw==}
@@ -2925,7 +2979,6 @@ packages:
         optional: true
     dependencies:
       ms: 2.1.2
-    dev: true
 
   /decode-named-character-reference@1.0.2:
     resolution: {integrity: sha512-O8x12RzrUF8xyVcY0KJowWsmaJxQbmy0/EtnNtHRpsOcT7dFk5W598coHqBVpmWo1oQQfsCqfCmkZN5DJrZVdg==}
@@ -3003,6 +3056,14 @@ packages:
     dependencies:
       heap: 0.2.7
     dev: true
+
+  /discord-api-types@0.37.61:
+    resolution: {integrity: sha512-o/dXNFfhBpYHpQFdT6FWzeO7pKc838QeeZ9d91CfVAtpr5XLK4B/zYxQbYgPdoMiTDvJfzcsLW5naXgmHGDNXw==}
+    dev: false
+
+  /discord-api-types@0.37.76:
+    resolution: {integrity: sha512-GQI02JvBVl9+WQiMmyc/OFuJ4bBBf2VWb6NjPBnzrrdF2D/2S07mA1ZCd5+IhHRjU8wQ83c/hmjj9nn1+r/K9g==}
+    dev: false
 
   /dlv@1.1.3:
     resolution: {integrity: sha512-+HlytyjlPKnIG8XuRG8WvmBP8xs8P71y+SKKS6ZXWoEgLuePxtDoUEiH7WkdePWrQ5JBpE6aoVqfZfJUQkjXwA==}
@@ -4207,6 +4268,10 @@ packages:
       es5-ext: 0.10.64
     dev: true
 
+  /magic-bytes.js@1.10.0:
+    resolution: {integrity: sha512-/k20Lg2q8LE5xiaaSkMXk4sfvI+9EGEykFS4b0CHHGWqDYU0bGUFSwchNOMA56D7TCs9GwVTkqe9als1/ns8UQ==}
+    dev: false
+
   /markdown-extensions@1.1.1:
     resolution: {integrity: sha512-WWC0ZuMzCyDHYCasEGs4IPvLyTGftYwh6wIEOULOF0HXcqZlhwRzrK0w2VUlxWA98xnvb/jszw4ZSkJ6ADpM6Q==}
     engines: {node: '>=0.10.0'}
@@ -4798,7 +4863,6 @@ packages:
 
   /ms@2.1.2:
     resolution: {integrity: sha512-sGkPx+VjMtmA6MX27oA4FBFELFCZZ4S4XqeGOXCv68tT+jb3vk/RyaKWP0PTKyWtmLSM0b+adUTEvbs1PEaH2w==}
-    dev: true
 
   /ms@2.1.3:
     resolution: {integrity: sha512-6FlzubTLZG3J2a/NVCAleEhjzq5oxgHyaCU9yYXvcLsvoVaHJq/s5xXI6/XXP6tz7R9xAOtHnSO/tXtF3WRTlA==}
@@ -5513,6 +5577,19 @@ packages:
       unified: 10.1.2
     dev: true
 
+  /remix-auth-discord@1.3.3(@remix-run/react@2.8.1)(@remix-run/server-runtime@2.8.1):
+    resolution: {integrity: sha512-xu/NTV/wHM3zUOlKtav8k3OBBzEBcr9ADrVPPV2aoLuNX432kK9QLAT/oDysfJyKnvKjZwVhlJNBkD8wBSnhMQ==}
+    peerDependencies:
+      '@remix-run/server-runtime': ^2.1.0
+    dependencies:
+      '@remix-run/server-runtime': 2.8.1(typescript@5.3.3)
+      remix-auth: 3.6.0(@remix-run/react@2.8.1)(@remix-run/server-runtime@2.8.1)
+      remix-auth-oauth2: 1.11.2(@remix-run/server-runtime@2.8.1)(remix-auth@3.6.0)
+    transitivePeerDependencies:
+      - '@remix-run/react'
+      - supports-color
+    dev: false
+
   /remix-auth-form@1.4.0(@remix-run/server-runtime@2.8.1)(remix-auth@3.6.0):
     resolution: {integrity: sha512-PirsVtv2AbJ7Lg+OjE+rjlW9AnkNYmqfmNIqTg0Mh1wur22ls5hxf2icVXVCRRhpcpV+FyoDxh03LtIyRj646A==}
     peerDependencies:
@@ -5521,6 +5598,20 @@ packages:
     dependencies:
       '@remix-run/server-runtime': 2.8.1(typescript@5.3.3)
       remix-auth: 3.6.0(@remix-run/react@2.8.1)(@remix-run/server-runtime@2.8.1)
+    dev: false
+
+  /remix-auth-oauth2@1.11.2(@remix-run/server-runtime@2.8.1)(remix-auth@3.6.0):
+    resolution: {integrity: sha512-5ORP+LMi5CVCA/Wb8Z+FCAJ73Uiy4uyjEzhlVwNBfdAkPOnfxzoi+q/pY/CrueYv3OniCXRM35ZYqkVi3G1UPw==}
+    peerDependencies:
+      '@remix-run/server-runtime': ^1.0.0 || ^2.0.0
+      remix-auth: ^3.6.0
+    dependencies:
+      '@remix-run/server-runtime': 2.8.1(typescript@5.3.3)
+      debug: 4.3.4
+      remix-auth: 3.6.0(@remix-run/react@2.8.1)(@remix-run/server-runtime@2.8.1)
+      uuid: 9.0.1
+    transitivePeerDependencies:
+      - supports-color
     dev: false
 
   /remix-auth@3.6.0(@remix-run/react@2.8.1)(@remix-run/server-runtime@2.8.1):
@@ -6127,6 +6218,13 @@ packages:
 
   /undici-types@5.26.5:
     resolution: {integrity: sha512-JlCMO+ehdEIKqlFxk6IfVoAUVmgz7cU7zD/h9XZ0qzeosSHmUJVOzSQvvYSYWXkFXC+IfLKSIffhv0sVZup6pA==}
+
+  /undici@5.27.2:
+    resolution: {integrity: sha512-iS857PdOEy/y3wlM3yRp+6SNQQ6xU0mmZcwRSriqk+et/cwWAtwmIGf6WkoDN2EK/AMdCO/dfXzIwi+rFMrjjQ==}
+    engines: {node: '>=14.0'}
+    dependencies:
+      '@fastify/busboy': 2.1.1
+    dev: false
 
   /unified@10.1.2:
     resolution: {integrity: sha512-pUSWAi/RAnVy1Pif2kAoeWNBa3JVrx0MId2LASj8G+7AiHWoKZNTomq6LG326T68U7/e263X6fTdcXIy7XnF7Q==}
